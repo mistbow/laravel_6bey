@@ -10,7 +10,6 @@
  
    {{ Form::submit('Login', array('class'=>'btn btn-large btn-primary btn-block'))}}
 
-   {{ link_to_route('password_resets.create', '找回密码')}}
 {{ Form::close() }}
 
 @stop
