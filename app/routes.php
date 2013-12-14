@@ -11,11 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'TopicsController@index');
 
 Route::controller('password', 'RemindersController');
 
 Route::controller('users', 'UsersController');
+
+Route::resource('topics', 'TopicsController');

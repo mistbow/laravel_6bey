@@ -1,0 +1,135 @@
+.navbar-inner {
+	border-radius: 0px;
+}
+.form-signup, .form-signin {
+   width: 400px;
+   margin: 0 auto;
+}
+
+body {
+	background-color: #ccc;
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+a {
+	color: #2c64d7;
+	text-decoration: none;
+	font-family:Microsoft YaHei;
+}
+
+
+/* post list */
+.media {
+	border-bottom: #D0D0D0 dashed 1px;
+}
+
+#node_info {
+	margin: 0 -10px;
+	padding: 0 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.media-heading a {
+	font-weight: normal;
+}
+#node_info .sorts {
+	text-align: right;
+	color: #999;
+	padding: 3px 0 10px 0;
+}
+
+#node_info .sorts ul {
+display: inline;
+margin: 0;
+padding: 0;
+}
+
+#node_info .sorts li {
+	display: inline;
+	margin: 0 5px;
+}
+
+#node_info .sorts li.active a {
+	color: #333;
+	border-bottom: 1px dotted #ddd;
+}
+
+#node_info .sorts li a.popular {
+	color: #9d5051;
+}
+
+.small_liked {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: url("../images/icons.png") 0px -132px no-repeat;
+}
+
+.sidebar h2 {
+	font-size: 12px;
+	line-height: 100%;
+	color: #999;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	margin: 0 -10px 10px -10px;
+	padding-bottom: 8px;
+}
+
+/* 小块数据 */
+.content-unit {
+
+	padding: 10px;
+	margin-bottom: 30px;
+	color: inherit;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	box-shadow: 0 0px 2px rgba(0,0,0,0.05);
+	background-color: #fff;
+}
+
+/* side bar*/
+.siderbar-unit {
+	padding: 10px;
+	margin-bottom: 30px;
+	color: inherit;
+	background-color: #eee;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+
+/* 帖子列表 head显示字体大小 */
+.media-heading  {
+	font-size: 16px;
+}
+
+/* 帖子列表 横线向下一点 */
+.media {
+	padding-bottom: 5px;
+}
+
+.userinfo li {
+font-size: 14px;
+line-height: 180%;
+border-bottom: 1px dashed #eee;
+}
+
+.userinfo li label {
+	color: #999;
+	font-size: 12px;
+	margin-right: 8px;
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+}
+
+/* post edit css*/
+.tools a {
+	padding-left: 5px;
+}
+.post_hidden {
+	text-align: right;
+	height: 16px;
+	overflow: hidden;
+}

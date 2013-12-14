@@ -11,7 +11,7 @@
 		<!-- stylesheets -->
 		{{ HTML::style('packages/bootstrap/css/bootstrap.min.css') }}
 		@yield('styles')
-		{{ HTML::style('public/css/app.css') }}
+		{{ HTML::style('css/app.css') }}
 		<script>
 			var URL = {
 				'base' : '{{ URL::to('/') }}',
@@ -28,23 +28,27 @@
 @yield('navbar.append')
  
  
-<div id="main">
 <div class="container">
- 
-@yield('main.prepend')
- 
-<div id="content">
-@yield('content')
-</div><!-- ./ #content -->
- 
-<div id="sidebar">
-@yield('sidebar')
-</div><!-- ./ #sidebar -->
- 
-@yield('main.append')
- 
-</div>
-</div><!-- ./ #main -->
+@if(Session::has('message'))
+	<p class="alert">{{ Session::get('message') }}</p>
+@else
+<div class="alert alert-info">
+	<a href="/">6bey又一次蛋疼的改版界面了</a>
+</div> 
+@endif
+        
+    <div class="row">
+        <div class="span9">
+            <div class="content-unit">
+                @include('app.sort')
+                @yield('content')
+            </div><!-- end content-unit -->
+            </div> <!-- end span9 -->
+            <div class="span3 sidebar">
+               @yield('sidebar')
+            </div><!-- end span3 -->
+    </div><!-- end row-->
+</div><!-- end container -->
  
  
 @yield('footer.prepend')
