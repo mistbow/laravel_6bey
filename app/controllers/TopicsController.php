@@ -2,6 +2,13 @@
 
 class TopicsController extends BaseController {
 
+	protected $topic;
+
+	public function __construct(Topic $topic)
+	{
+		$this->topic = $topic;
+	}
+	
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +16,8 @@ class TopicsController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('topics.index');
+        $topics = Topic::paginate(10);
+        return View::make('topics.index')->withTopics($topics);
 	}
 
 	/**
@@ -29,7 +37,16 @@ class TopicsController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input = Input::all();
+
+		if(! $this->topic->fill($input)->isValid()) {
+			return Redirect::back()->withInput()->withErrors($this->topic->errors);
+		}
+
+		$this->topic->reply_at = new DateTime;
+		$this->topic->save();
+		
+		return Redirect::route('topics.index');
 	}
 
 	/**
@@ -40,7 +57,8 @@ class TopicsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('topics.show');
+        $topic = Topic::find($id);
+        return View::make('topics.show')->withTopic($topic);
 	}
 
 	/**
@@ -51,7 +69,8 @@ class TopicsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('topics.edit');
+        $topic = Topic::find($id);
+        return View::make('topics.edit')->withTopic($topic);
 	}
 
 	/**

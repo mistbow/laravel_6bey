@@ -3,5 +3,26 @@
 class Topic extends Eloquent {
 	protected $guarded = array();
 
-	public static $rules = array();
+	protected $fillable = ['title', 'body', 'user_id', 'reply_count', 'reply_at'];
+
+	public static $rules = array(
+			'title' => 'required',
+			'body' => 'required',
+		);
+
+	public $errors;
+
+	public function isValid() 
+	{
+		
+		$validation = Validator::make($this->attributes, static::$rules);
+
+		if($validation->passes()) {
+			return TRUE;
+		} 
+
+		$this->errors = $validation->messages();
+		return FALSE;
+		
+	}
 }
