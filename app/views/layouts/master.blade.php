@@ -53,8 +53,8 @@
  
  
 <!-- scripts -->
-{{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js') }}
-{{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js') }}
+{{ HTML::script('http://code.jquery.com/jquery-latest.js') }}
+{{ HTML::script('packages/bootstrap/js/bootstrap.min.js') }}
 @yield('scripts')
 {{ HTML::script('public/js/app.js') }}
  
