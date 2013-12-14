@@ -16,8 +16,6 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('password/remind', 'RemindersController@getRemind');
-
 Route::controller('password', 'RemindersController');
 
 Route::controller('users', 'UsersController');
