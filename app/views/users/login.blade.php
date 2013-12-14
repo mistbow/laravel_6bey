@@ -11,4 +11,7 @@
    {{ Form::submit('Login', array('class'=>'btn btn-large btn-primary btn-block'))}}
 
 {{ Form::close() }}
+
+{{ link_to_action('RemindersController@getRemind', '找回密码')}}
+
 @stop
