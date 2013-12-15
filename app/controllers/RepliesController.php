@@ -38,7 +38,7 @@ class RepliesController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($topic_id, $id)
 	{
         return View::make('replies.show');
 	}

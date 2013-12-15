@@ -81,7 +81,7 @@ class TopicsController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		return $id;
 	}
 
 	/**

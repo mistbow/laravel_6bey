@@ -1,9 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
+
 	<h1>Update New topic</h1>
 
-	{{ Form::open(['route' => 'topics.store']) }}
+	{{ Form::model($topic, array('route' => array('topics.update', $topic->id), 'method' => 'PUT'))}}
+
 		<div>
 			{{ Form::label('title', '标题：') }}
 			{{ Form::text('title')}}
