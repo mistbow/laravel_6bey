@@ -18,3 +18,5 @@ Route::controller('password', 'RemindersController');
 Route::controller('users', 'UsersController');
 
 Route::resource('topics', 'TopicsController');
+
+Route::resource('topics.replies', 'RepliesController');
