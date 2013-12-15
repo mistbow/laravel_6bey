@@ -81,7 +81,18 @@ class TopicsController extends BaseController {
 	 */
 	public function update($id)
 	{
-		return $id;
+		$this->topic = Topic::find($id);
+
+		$this->topic->title = Input::get('title');
+		$this->topic->body = Input::get('body');
+		if(! $this->topic->isValid()) {
+			return Redirect::back()->withInput()->withErrors($this->topic->errors);
+		}
+
+		$this->topic->reply_at = new DateTime;
+		$this->topic->save();
+		
+		return Redirect::route('topics.show', $id);
 	}
 
 	/**
