@@ -11,6 +11,17 @@
 |
 */
 
+Route::get('/email', function() {
+
+	$user = User::first();
+
+	$mailer = new Mailers\UserMailer($user);
+
+	$mailer->welcome()->deliver();
+
+	return 'send';
+});
+
 Route::get('/', 'TopicsController@index');
 
 Route::controller('password', 'RemindersController');

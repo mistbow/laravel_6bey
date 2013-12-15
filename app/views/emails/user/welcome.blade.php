@@ -1,0 +1,1 @@
+Hi there, {{ $username }}! Welcome to the site!
