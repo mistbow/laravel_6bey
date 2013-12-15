@@ -9,22 +9,22 @@ class TopicsTableSeeder extends Seeder {
 
 		$topics = array(
 			array(
-				'title' => '第一篇帖子', 'body' => '第一篇帖子的内容','reply_at' => time(),
+				'title' => '第一篇帖子', 'body' => '第一篇帖子的内容','reply_at' => new DateTime,'created_at' => new DateTime,'updated_at' => new DateTime,
 			),
 			array(
-				'title' => '第二篇帖子', 'body' => '第二篇帖子的内容','reply_at' => time(),
+				'title' => '第二篇帖子', 'body' => '第二篇帖子的内容','reply_at' => new DateTime,'created_at' => new DateTime,'updated_at' => new DateTime,
 			),
 			array(
-				'title' => '第三篇帖子', 'body' => '第三篇帖子的内容','reply_at' => time(),
+				'title' => '第三篇帖子', 'body' => '第三篇帖子的内容','reply_at' => new DateTime,'created_at' => new DateTime,'updated_at' => new DateTime,
 			),
 			array(
-				'title' => '第四篇帖子', 'body' => '第四篇帖子的内容','reply_at' => time(),
+				'title' => '第四篇帖子', 'body' => '第四篇帖子的内容','reply_at' => new DateTime,'created_at' => new DateTime,'updated_at' => new DateTime,
 			),
 			array(
-				'title' => '第五篇帖子', 'body' => '第五篇帖子的内容','reply_at' => time(),
+				'title' => '第五篇帖子', 'body' => '第五篇帖子的内容','reply_at' => new DateTime,'created_at' => new DateTime,'updated_at' => new DateTime,
 			),
 			array(
-				'title' => '第六篇帖子', 'body' => '第六篇帖子的内容','reply_at' => time(),
+				'title' => '第六篇帖子', 'body' => '第六篇帖子的内容','reply_at' => new DateTime,'created_at' => new DateTime,'updated_at' => new DateTime,
 			),
 		);
 
