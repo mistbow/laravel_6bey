@@ -8,7 +8,13 @@ class Topic extends Eloquent {
 	public static $rules = array(
 			'title' => 'required',
 			'body' => 'required',
-		);
+	);
+
+	public function replies()
+    {
+        return $this->hasMany('Reply');
+    }
+
 
 	public $errors;
 

@@ -58,7 +58,7 @@ class TopicsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        $topic = Topic::with('user')->find($id);
+        $topic = Topic::with('user', 'replies')->find($id);
         return View::make('topics.show')->withTopic($topic);
 	}
 

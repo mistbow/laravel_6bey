@@ -43,7 +43,8 @@
                 @include('app.sort')
                 @yield('content')
             </div><!-- end content-unit -->
-            	@yield('reply')
+            	@yield('topic_replies')
+            	@yield('create_reply')
             </div> <!-- end span9 -->
             <div class="span3 sidebar">
                @yield('sidebar')

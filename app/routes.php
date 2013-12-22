@@ -12,9 +12,8 @@
 */
 
 Route::get('/test', function() {
-	$topic = Topic::find(1);
-	return $topic;
-	return Acme\Utilties\DateUtils::timeago();
+	$replies = Topic::with('replies')->find(1);
+	return $replies;
 });
 
 Route::get('/email', function() {
