@@ -49,6 +49,11 @@ class RepliesController extends BaseController {
         	$this->reply->user_id = Auth::user()->id;
         	if($this->reply->save())
         	{
+        		$topic = Topic::find($topic_id);
+        		$topic->reply_count = $topic->reply_count + 1;
+        		$topic->reply_at = new DateTime;
+        		$topic->updated_at = new DateTime;
+        		$topic->save();
         		return Redirect::to('topics/'.$topic_id);
         	}
         }
