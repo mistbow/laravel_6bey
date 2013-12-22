@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
 	<h1>Create New topic</h1>
 
 	{{ Form::open(['route' => 'topics.store']) }}

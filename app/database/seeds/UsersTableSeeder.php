@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder {
 			array(
 				'id' => 1,
                 'username' => 'calvin',
-                'email' => '117064092',
+                'email' => '117064092@qq.com',
                 'password' => Hash::make('1234'),
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime
@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder {
 			array(
 				'id' => 2,
                 'username' => 'kevin',
-                'email' => '784793116',
+                'email' => '784793116@qq.com',
                 'password' => Hash::make('1234'),
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime

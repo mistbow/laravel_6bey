@@ -2,6 +2,13 @@
 
 class RepliesController extends BaseController {
 
+	protected $reply;
+
+	public function __construct(Reply $reply)
+	{
+		$this->reply = $reply;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -27,9 +34,27 @@ class RepliesController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($topic_id)
 	{
-		//
+		$rules = array(
+            'body' => 'required|min:5'
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes())
+        {
+        	$this->reply->body = Input::get('body');
+        	$this->reply->topic_id = $topic_id;
+        	$this->reply->user_id = Auth::user()->id;
+        	if($this->reply->save())
+        	{
+        		return Redirect::to('topics/'.$topic_id);
+        	}
+        }
+
+        return Redirect::to('topics/' . $topic_id)->withInput()->withErrors($validator);
+
 	}
 
 	/**
