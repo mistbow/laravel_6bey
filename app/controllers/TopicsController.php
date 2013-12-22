@@ -43,6 +43,7 @@ class TopicsController extends BaseController {
 			return Redirect::back()->withInput()->withErrors($this->topic->errors);
 		}
 
+		$this->topic->user_id = Auth::user()->id;
 		$this->topic->reply_at = new DateTime;
 		$this->topic->save();
 		
