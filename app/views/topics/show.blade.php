@@ -20,7 +20,7 @@
 </div>
 @stop
 
-@section('create_reply')
+@section('topic_replies')
 <div class="content-unit">
         
   <div class="media">
