@@ -18,7 +18,10 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php",
 			"app/mailers"
-		]
+		],
+		"psr-0": {
+            "Acme": "app/"
+        }
 	},
 	"scripts": {
 		"post-install-cmd": [

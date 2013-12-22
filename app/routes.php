@@ -12,7 +12,9 @@
 */
 
 Route::get('/test', function() {
-	return Topic::with('user')->find(1);
+	$topic = Topic::find(1);
+	return $topic;
+	return Acme\Utilties\DateUtils::timeago();
 });
 
 Route::get('/email', function() {

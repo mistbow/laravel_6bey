@@ -10,7 +10,10 @@
             <h4 class="media-heading">
                     <b>{{ $topic->title }}</b>
             </h4>
-            1小时以前 by {{ $topic->user->username}} | 最后回复于1小时以前
+            {{ \Acme\Utilties\DateUtils::timeago($topic->created_at->getTimestamp())}} 
+              by 
+            {{ $topic->user->username}} | 最后回复于
+            {{ $topic->reply_at }} 
           </div>
         </div>
         <div style="margin-left:20px;">
