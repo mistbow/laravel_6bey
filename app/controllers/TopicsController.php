@@ -16,7 +16,7 @@ class TopicsController extends BaseController {
 	 */
 	public function index()
 	{
-        $topics = Topic::paginate(10);
+        $topics = Topic::with('user')->paginate(10);
         return View::make('topics.index')->withTopics($topics);
 	}
 
@@ -58,7 +58,7 @@ class TopicsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        $topic = Topic::find($id);
+        $topic = Topic::with('user')->find($id);
         return View::make('topics.show')->withTopic($topic);
 	}
 
@@ -90,6 +90,7 @@ class TopicsController extends BaseController {
 			return Redirect::back()->withInput()->withErrors($this->topic->errors);
 		}
 
+		$this->topic->user_id = Auth::user()->id;
 		$this->topic->reply_at = new DateTime;
 		$this->topic->save();
 		

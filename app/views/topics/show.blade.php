@@ -10,7 +10,7 @@
             <h4 class="media-heading">
                     <b>{{ $topic->title }}</b>
             </h4>
-            1小时以前 by 乐天 | 最后回复于1小时以前
+            1小时以前 by {{ $topic->user->username}} | 最后回复于1小时以前
           </div>
         </div>
         <div style="margin-left:20px;">

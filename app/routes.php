@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/test', function() {
+	return Topic::with('user')->find(1);
+});
+
 Route::get('/email', function() {
 
 	$user = User::first();

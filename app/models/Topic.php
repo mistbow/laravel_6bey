@@ -12,6 +12,11 @@ class Topic extends Eloquent {
 
 	public $errors;
 
+	public function user()
+    {
+        return $this->belongsTo('User');
+    }
+
 	public function isValid() 
 	{
 		

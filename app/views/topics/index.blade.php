@@ -18,7 +18,7 @@
 					{{ $topic->title}}
 		    	</a>
 		    </h4>
-		    1小时以前 by 乐天 | 最后回复于1小时以前
+		    1小时以前 by {{ $topic->user->username }} | 最后回复于1小时以前
 		  </div>
 		</div>
 	@endforeach
