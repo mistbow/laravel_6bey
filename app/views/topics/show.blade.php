@@ -30,7 +30,7 @@
     <div class="media">
                   
       <div class="tools pull-right">
-        @if($reply->user_id == Auth::user()->id)
+        @if(Auth::check() && $reply->user_id == Auth::user()->id)
           <a class="icon small_edit" href="#" title="修改回复">
             <span class="glyphicon glyphicon-check"></span>
           </a>

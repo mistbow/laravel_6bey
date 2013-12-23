@@ -53,7 +53,7 @@
                   </li>
                   <li class="divider"></li>
                   <li>
-                    {{ HTML::link('/', '退出') }}
+                    {{ HTML::link('users/logout', '退出') }}
                   </li>
                  </ul>
               </li>
