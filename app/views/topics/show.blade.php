@@ -32,14 +32,14 @@
       <div class="tools pull-right">
         @if(Auth::check() && $reply->user_id == Auth::user()->id)
           <a class="icon small_edit" href="#" title="修改回复">
-            <span class="glyphicon glyphicon-check"></span>
+            <span class="glyphicon icon-check"></span>
           </a>
           <a class="icon small_delete" data-confirm="确定要删除么？" data-method="delete" href="#" rel="nofollow" title="删除回复">
-            <span class="glyphicon glyphicon-trash"></span>
+            <span class="glyphicon icon-trash"></span>
           </a>
         @endif
         <a class="icon small_edit" href="" title="回复">
-          <span class="glyphicon glyphicon-share-alt"></span>
+          <span class="glyphicon icon-share-alt"></span>
         </a>
       </div><!-- end pull-right -->
   
