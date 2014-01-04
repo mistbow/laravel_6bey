@@ -1,1 +1,1 @@
-this is a website for learning and comunicating!
+基于laravel4的交流和问答社区！

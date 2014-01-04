@@ -35,7 +35,7 @@
                         </a>
                   </li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">你好,
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">你好,{{{Auth::user()->username}}}
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
