@@ -17,7 +17,7 @@ class CreateTopicsTable extends Migration {
 			$table->string('title');
 			$table->text('body');
 			$table->integer('user_id');
-			$table->integer('reply_count');
+			$table->integer('reply_count')->default(0);
 			$table->timestamp('reply_at');
 			$table->timestamps();
 		});

@@ -17,7 +17,7 @@ class CreateRepliesTable extends Migration {
 			$table->integer('topic_id');
 			$table->text('body');
 			$table->integer('user_id');
-			$table->integer('state');
+			$table->integer('state')->default(1);
 			$table->timestamps();
 		});
 	}
