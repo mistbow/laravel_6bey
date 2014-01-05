@@ -5,7 +5,7 @@ class Question extends Eloquent {
 
 	public static $rules = array();
 
-	public function users() {
+	public function user() {
         return $this->belongsTo('User','user_id');
 	}
 
