@@ -31,5 +31,5 @@
 	
 @stop
 @section('sidebar')
- @include('app.sidebar')
+ @include('app.questionsidebar')
 @stop

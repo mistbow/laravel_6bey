@@ -17,7 +17,7 @@
                       {{ HTML::link('/topics', '讨论区') }}
                     </li>
                     <li class="active">
-                      {{ HTML::link('/', '问答社区') }}
+                      {{ HTML::link('/questions', '问答社区') }}
                     </li>
                     <li class="active">
                       {{ HTML::link('/', '师兄笔记') }}

@@ -58,7 +58,8 @@ class QuestionsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('questions.show');
+		$question = Question::with('user')->find($id);
+        return View::make('questions.show')->with('question', $question);
 	}
 
 	/**
