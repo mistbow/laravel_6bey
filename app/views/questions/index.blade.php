@@ -18,7 +18,12 @@
 					{{ $question->title}}
 		    	</a>
 		    </h4>
-		    {{ \Acme\Utilties\DateUtils::timeago($question->created_at->getTimestamp())}} by {{ $question->user->username }} | 最后回复于{{ $question->reply_at }} 
+		    {{ \Acme\Utilties\DateUtils::timeago($question->created_at->getTimestamp())}} by {{ $question->user->username }} | 
+		    @if($question->tags!=null)
+				@foreach($question->tags as $tag)
+                   [{{{ $tag->tag }}}]
+                 @endforeach
+		    @endif
 		  </div>
 		</div>
 	@endforeach

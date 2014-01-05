@@ -16,6 +16,11 @@
 			{{ $errors->first('body')}}
 		</div>
 		<div>
+			{{ Form::label('tags', '标签：') }}
+			{{ Form::text('tags')}}
+			{{ $errors->first('tags')}}
+		</div>
+		<div>
 			{{ Form::label('score', '分数：') }}
 			{{ Form::text('score')}}
 			{{ $errors->first('score')}}

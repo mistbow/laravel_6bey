@@ -17,7 +17,7 @@ class QuestionsController extends BaseController {
 	 */
 	public function index()
 	{
-		$questions = Question::with('user')->paginate(10);
+		$questions = Question::with('user', 'tags')->paginate(10);
         return View::make('questions.index')->with('questions', $questions);
 	}
 
@@ -46,7 +46,30 @@ class QuestionsController extends BaseController {
 
 		$this->question->user_id = Auth::user()->id;
 		$this->question->save();
-		
+
+		if(Str::length(Input::get('tags'))) {
+			$tags_array = explode(',', Input::get('tags'));
+			if(count($tags_array)) {
+				foreach ($tags_array as $key => $tag) {
+					$tag = trim($tag);
+					if(Str::length(Str::slug($tag))) {
+						$tag_friendly = Str::slug($tag);
+						$tag_check = Tag::where('tag_friendly',$tag_friendly);
+						if($tag_check->count() == 0) {
+							$tag_info = Tag::create(array(
+								'tag' => $tag,
+								'tag_friendly' => $tag_friendly,
+								));
+						} else {
+							$tag_info = $tag_check->first();
+						}
+					}
+					$this->question->tags()->attach($tag_info->id);
+					return $this->question;
+				}
+			}
+		}
+		return $this->question;
 		return Redirect::route('questions.index');
 	}
 
