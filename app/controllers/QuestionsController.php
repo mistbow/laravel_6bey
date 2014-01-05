@@ -2,6 +2,14 @@
 
 class QuestionsController extends BaseController {
 
+	protected $question;
+
+	public function __construct(Question $question)
+	{
+		$this->question = $question;
+	}
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -30,7 +38,16 @@ class QuestionsController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input = Input::all();
+
+		if(! $this->question->fill($input)->isValid()) {
+			return Redirect::back()->withInput()->withErrors($this->question->errors);
+		}
+
+		$this->question->user_id = Auth::user()->id;
+		$this->question->save();
+		
+		return Redirect::route('questions.index');
 	}
 
 	/**

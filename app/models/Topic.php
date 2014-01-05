@@ -3,7 +3,7 @@
 class Topic extends Eloquent {
 	protected $guarded = array();
 
-	protected $fillable = ['title', 'body', 'user_id', 'reply_count', 'reply_at'];
+	protected $fillable = array('title', 'body', 'user_id', 'reply_count', 'reply_at');
 
 	public static $rules = array(
 			'title' => 'required',

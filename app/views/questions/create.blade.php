@@ -15,6 +15,11 @@
 			{{ Form::textarea('body')}}
 			{{ $errors->first('body')}}
 		</div>
+		<div>
+			{{ Form::label('score', '分数：') }}
+			{{ Form::text('score')}}
+			{{ $errors->first('score')}}
+		</div>
 
 		<div>{{ Form::submit('提交') }}</div>
 	{{ Form::close() }}
